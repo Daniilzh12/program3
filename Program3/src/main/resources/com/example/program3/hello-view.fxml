@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pane" prefHeight="403.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.program3.HelloController">
+    <VBox layoutY="-18.0" prefHeight="386.0" prefWidth="348.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <HBox prefHeight="100.0" prefWidth="200.0">
+         <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <center>
+                  <ImageView fx:id="wheel" fitHeight="204.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            </center>
+            <right>
+               <ImageView fx:id="triangle" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            </right>
+         </BorderPane>
+            <TitledPane animated="false" text="Список лидеров">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <ListView fx:id="LeaderBoard" prefHeight="181.0" prefWidth="125.0" />
+                </AnchorPane>
+            </TitledPane>
+        </HBox>
+        <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <TextField fx:id="PlayerName" />
+            <Button mnemonicParsing="false" onAction="#createPlayer" text="Создать игрока" />
+            <Button mnemonicParsing="false" onAction="#play" text="Играть" />
+        </ToolBar>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+               <Label prefHeight="30.0" prefWidth="33.0" text="Счет: " />
+               <Label fx:id="countMoney" prefHeight="32.0" prefWidth="93.0" text="0" />
+               <ToggleButton fx:id="theme" mnemonicParsing="false" onAction="#themeChange" prefHeight="25.0" prefWidth="214.0" text="Светлая тема / Праздничная тема" />
+         </children>
+      </HBox>
+      <HBox fx:id="person" alignment="BOTTOM_LEFT" prefHeight="63.0" prefWidth="348.0" visible="false">
+         <children>
+            <ImageView fx:id="personAvatar" fitHeight="67.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="personName" text="Толик:">
+               <font>
+                  <Font name="Aharoni Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+          <center>
+              <TextArea fx:id="personText" editable="false" prefHeight="77.0" prefWidth="348.0">
+              <effect>
+                  <Lighting bumpInput="$null">
+                      <light>
+                          <Light.Distant />
+                      </light>
+                  </Lighting>
+              </effect>
+          </TextArea>
+          </center>
+      </BorderPane>
+    </VBox>
+</AnchorPane>
